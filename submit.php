@@ -2,9 +2,9 @@
 
 session_start();
 $servername = "localhost";
-$username = "id10247591_qnc";
-$password = "z4<68q60";
-$database = "id10247591_quillncoffee";
+$username = "**************";
+$password = "**********";
+$database = "******************";
 
 if(!isset($_SESSION['name'])){
   die('Not logged in');
