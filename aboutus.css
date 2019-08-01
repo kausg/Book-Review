@@ -1,0 +1,162 @@
+body {
+    width: 100wh;
+    height: 90vh;
+    color: #fff;
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, rgb(41, 206, 170), rgb(44, 152, 224));
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 15s ease infinite;
+    -moz-animation: Gradient 15s ease infinite;
+    animation: Gradient 15s ease infinite;
+    padding-bottom: 58px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+@-webkit-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.logo {
+    font-family: "Bowlby One SC";
+    font-size: 30px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 600;
+    line-height: 27px;
+    float: left;
+    margin-top: 10px;
+}
+
+.header {
+    height: 100px;
+    background: none;
+    padding: 0 20px;
+    color: rgb(204, 221, 233);
+    margin: 20px;
+}
+
+.menu {
+    float: right;
+    line-height: 100px;
+}
+
+.menu a {
+    color: rgb(204, 221, 233);
+    text-transform: uppercase;
+    font-family: "Bubblegum Sans";
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 0 10px;
+    transition: 0.4s;
+}
+
+.show-menu-btn,
+.hide-menu-btn {
+    transition: 0.4s;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.show-menu-btn {
+    float: right;
+}
+
+.show-menu-btn i {
+    line-height: 100px;
+}
+
+.menu a:hover,
+.show-menu-btn:hover,
+.hide-menu-btn:hover {
+    color: #9327eb;
+}
+
+#chk {
+    position: absolute;
+    visibility: hidden;
+    z-index: -1111;
+}
+
+.content {
+    padding: 0 20px;
+}
+
+.content img {
+    width: 100%;
+    max-width: 700px;
+    margin: 20px 0;
+}
+
+.content p {
+    text-align: justify;
+}
+
+@media screen and (max-width:800px) {
+    .show-menu-btn,
+    .hide-menu-btn {
+        display: block;
+    }
+    .menu {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #333;
+        right: -100%;
+        top: 0;
+        text-align: center;
+        padding: 80px 0;
+        line-height: normal;
+        transition: 0.7s;
+    }
+    .menu a {
+        display: block;
+        padding: 20px;
+    }
+    .hide-menu-btn {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+    #chk:checked~.menu {
+        right: 0;
+    }
+}

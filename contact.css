@@ -1,0 +1,267 @@
+body {
+    width: 100wh;
+    height: 90vh;
+    color: #fff;
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, rgb(41, 206, 170), rgb(44, 152, 224));
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 15s ease infinite;
+    -moz-animation: Gradient 15s ease infinite;
+    animation: Gradient 15s ease infinite;
+    padding-bottom: 58px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+@-webkit-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.logo {
+    font-family: "Bowlby One SC";
+    font-size: 30px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 600;
+    line-height: 27px;
+    float: left;
+    margin-top: 10px;
+}
+
+.header {
+    height: 100px;
+    background: none;
+    padding: 0 20px;
+    color: rgb(204, 221, 233);
+    margin: 20px;
+}
+
+.menu {
+    float: right;
+    line-height: 100px;
+    overflow: none;
+}
+
+.menu a {
+    color: rgb(204, 221, 233);
+    text-transform: uppercase;
+    font-family: "Bubblegum Sans";
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 0 10px;
+    transition: 0.4s;
+}
+
+.show-menu-btn,
+.hide-menu-btn {
+    transition: 0.4s;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.show-menu-btn {
+    float: right;
+}
+
+.show-menu-btn i {
+    line-height: 100px;
+}
+
+.menu a:hover,
+.show-menu-btn:hover,
+.hide-menu-btn:hover {
+    color: #9327eb;
+}
+
+#chk {
+    position: absolute;
+    visibility: hidden;
+    z-index: -1111;
+}
+
+.content {
+    padding: 0 20px;
+}
+
+.content img {
+    width: 100%;
+    max-width: 700px;
+    margin: 20px 0;
+}
+
+.content p {
+    text-align: justify;
+}
+
+@media screen and (max-width:800px) {
+    .show-menu-btn,
+    .hide-menu-btn {
+        display: block;
+    }
+    .menu {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #333;
+        right: -100%;
+        top: 0;
+        text-align: center;
+        padding: 80px 0;
+        line-height: normal;
+        transition: 0.7s;
+    }
+    .menu a {
+        display: block;
+        padding: 20px;
+    }
+    .hide-menu-btn {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+    #chk:checked~.menu {
+        right: 0;
+    }
+}
+
+
+/* Business Card Css */
+
+.business-card {
+    width: 500px;
+    height: 280px;
+}
+
+.middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.front,
+.back {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 0.5s linear;
+}
+
+.front {
+    background: rgba(220, 223, 59, 0.305);
+    padding: 40px;
+    transform: perspective(600px) rotateX(180deg);
+}
+
+.front::before,
+.front::after {
+    content: "";
+    position: absolute;
+    right: 0;
+}
+
+.front::before {
+    background: #2c3e50;
+    width: 80px;
+    height: 120px;
+    bottom: 0;
+    clip-path: polygon(0 100%, 40% 0, 100% 100%);
+}
+
+.front::after {
+    background: #34495e;
+    width: 100px;
+    height: 100%;
+    top: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%);
+}
+
+.front h2 {
+    text-transform: uppercase;
+}
+
+.front span {
+    background: #34495e;
+    color: rgb(193, 247, 239);
+    padding: 4px 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.front .contact-info li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.front .contact-info li i {
+    width: 26px;
+    height: 26px;
+    background: #34495e;
+    color: rgb(193, 247, 239);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 6px;
+}
+
+.back {
+    background: rgba(0, 0, 0, .7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(193, 247, 239);
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-size: 24px;
+    transform: perspective(600px) rotateX(0deg);
+}
+
+.business-card-active .front {
+    transform: perspective(600px) rotateX(0deg);
+}
+
+.business-card-active .back {
+    transform: perspective(600px) rotateX(-180deg);
+}
