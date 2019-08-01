@@ -1,9 +1,9 @@
 <?php
 session_start();
 $servername = "localhost";
-$username = "id10247591_qnc";
-$password = "z4<68q60";
-$database = "id10247591_quillncoffee";
+$username = "************";
+$password = "************";
+$database = "************";
 
 $salt='S1h_r*sHT!';
 $FAILURE=false;
